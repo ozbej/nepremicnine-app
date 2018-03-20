@@ -2,30 +2,35 @@ class PlacesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_place, only: [:show, :edit, :update, :destroy]
 
-  # GET /places
-  # GET /places.json
+    # GET /place
+  # GET /place.json
   def index
-    @places = Place.all
+    @place = Place.all
   end
 
-  # GET /places/1
-  # GET /places/1.json
+  # GET /place/1
+  # GET /place/1.json
   def show
   end
 
-  # GET /places/new
+  # GET /place/new
   def new
     @place = Place.new
   end
 
-  # GET /places/1/edit
+  # GET /place/1/edit
   def edit
   end
 
-  # POST /places
-  # POST /places.json
+  # POST /place
+  # POST /place.json
   def create
-    @place = Place.new(place_params)
+    #@place = Place.new(place_params)
+    
+    #zgoraj je orginal
+    #da ustvarimo povezavo, bo sedaj user ustvaril destinacijo in se bo zato shranil njegov tuji ključ
+    #v spremenljivki current_user je objekt trenutno prijavljenega uporabnika
+    @place = current_user.place.build(place_params)
 
     respond_to do |format|
       if @place.save
@@ -38,9 +43,13 @@ class PlacesController < ApplicationController
     end
   end
 
-  # PATCH/PUT /places/1
-  # PATCH/PUT /places/1.json
+  # PATCH/PUT /place/1
+  # PATCH/PUT /place/1.json
   def update
+    #opcijsko, če že imate vnešene kakšne destinacije, preden ste uredili prijavo in povezavo z uporabnikom
+    #potem bi ob vsakem urejanju se pod uporabnika vpisal uporabnik, ki trenutno ureja destinacijo
+    @place.user = current_user
+    
     respond_to do |format|
       if @place.update(place_params)
         format.html { redirect_to @place, notice: 'Place was successfully updated.' }
@@ -52,12 +61,12 @@ class PlacesController < ApplicationController
     end
   end
 
-  # DELETE /places/1
-  # DELETE /places/1.json
+  # DELETE /place/1
+  # DELETE /place/1.json
   def destroy
     @place.destroy
     respond_to do |format|
-      format.html { redirect_to places_url, notice: 'Place was successfully destroyed.' }
+      format.html { redirect_to place_url, notice: 'Place was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
@@ -70,6 +79,9 @@ class PlacesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def place_params
-      params.require(:place).permit(:ime, :opis, :lokacija, :kraj)
+      params.require(:place).permit(:name, :description, :picture)
     end
 end
+
+
+
