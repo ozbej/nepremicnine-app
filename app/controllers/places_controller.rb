@@ -2,6 +2,14 @@ class PlacesController < ApplicationController
   before_action :authenticate_user!
   before_action :set_place, only: [:show, :edit, :update, :destroy]
 
+#################### Administratorji ##########
+
+#if current_user.admin == false
+    #    current_user.admin = true
+    #    current_user.save
+    #end
+#################### Administratorji ##########    
+
     # GET /place
   # GET /place.json
   def index
