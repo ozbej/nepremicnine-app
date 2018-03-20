@@ -1,0 +1,13 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  ime: MyString
+  opis: MyText
+  lokacija: MyString
+  kraj: MyString
+
+two:
+  ime: MyString
+  opis: MyText
+  lokacija: MyString
+  kraj: MyString

@@ -1,0 +1,24 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Ime:</strong>
+  <%= @place.ime %>
+</p>
+
+<p>
+  <strong>Opis:</strong>
+  <%= @place.opis %>
+</p>
+
+<p>
+  <strong>Lokacija:</strong>
+  <%= @place.lokacija %>
+</p>
+
+<p>
+  <strong>Kraj:</strong>
+  <%= @place.kraj %>
+</p>
+
+<%= link_to 'Edit', edit_place_path(@place) %> |
+<%= link_to 'Back', places_path %>
