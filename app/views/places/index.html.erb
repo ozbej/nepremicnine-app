@@ -1,5 +1,5 @@
 <p id="notice"><%= notice %></p>
-
+<b id="uporabnik"><%= link_to('Logout', destroy_user_session_path, method: :delete) %></b>
 <h1>Places</h1>
 
 <table>
@@ -21,8 +21,12 @@
         <td><%= place.lokacija %></td>
         <td><%= place.kraj %></td>
         <td><%= link_to 'Show', place %></td>
-        <td><%= link_to 'Edit', edit_place_path(place) %></td>
-        <td><%= link_to 'Destroy', place, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Edit', edit_coctail_path(coctail) %></td>
+            <td ><%= link_to 'Destroy', coctail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <!--  <% if current_user.admin == true %>
+          <td><%= link_to 'Edit', edit_coctail_path(coctail) %></td>
+            <td ><%= link_to 'Destroy', coctail, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+         <% end %> -->
       </tr>
     <% end %>
   </tbody>
