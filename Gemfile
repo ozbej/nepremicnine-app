@@ -39,6 +39,7 @@ gem 'jbuilder', '~> 2.5'
 ############# Moji Gemi #############
 
 gem 'devise'
+gem 'bcrypt', platforms: :ruby
 
 #####################################
 
