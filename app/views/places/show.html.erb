@@ -1,13 +1,21 @@
+<style>
+hr {
+  margin-top:3em;
+  margin-bottom: 3em;
+}
+</style>
+
+<div class="row">
+<div class="col-3"></div>
+<div class="col-6">
 <p id="notice"><%= notice %></p>
 
 <p>
-  <strong>Ime:</strong>
-  <%= @place.ime %>
+  <h1><%= @place.ime %></h1>
 </p>
 
 <p>
-  <strong>Opis:</strong>
-  <%= @place.opis %>
+  <h2><%= @place.opis %></h2>
 </p>
 
 <p>
@@ -19,6 +27,20 @@
   <strong>Kraj:</strong>
   <%= @place.kraj %>
 </p>
-
+<hr>
+<div class="komentarji">
+<h4>Komentarji (<%= @place.comments.count %>)</h4>
+<div class="komentar">
+	<%= render @place.comments %>
+</div>
+<% if user_signed_in? %>
+<div class="dodaj_kom">
+	<h3>Dodaj komentar:</h3>
+	<%= render "comments/form" %>
+</div>
+<% if current_user.admin == true && %>
 <%= link_to 'Edit', edit_place_path(@place) %> |
+<% end %>
+<% end %>
 <%= link_to 'Back', places_path %>
+<div class="col-3"></div>
