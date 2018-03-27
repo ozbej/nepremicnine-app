@@ -26,9 +26,11 @@
     <p class="card-text">Lokacija: <%= place.lokacija %></p>
     <p class="card-text">Kraj: <%= place.kraj %></p>
     <div class="btn btn-info"><%= link_to 'Pokaži', place %></div>
+    <% if user_signed_in? %>
     <% if current_user.admin == true && %>
     <div class="btn btn-primary"><%= link_to 'Uredi', edit_place_path(place) %></div>
     <div class="btn btn-danger"><%= link_to 'Izbriši', place, method: :delete, data: { confirm: 'Are you sure?' } %></div>
+    <% end %>
     <% end %>
   </div>
 </div>

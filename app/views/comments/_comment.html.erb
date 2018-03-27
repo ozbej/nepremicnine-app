@@ -1,7 +1,13 @@
-<%= comment.user.email %><br>
-<b><%= comment.body %></b><br>
-<%= time_ago_in_words(comment.created_at) %><br>
-<% if comment.user_id == current_user.id %>
-<%= link_to 'Delete',[comment.place,comment], method: :delete, data: {confirm: 'Are you sure?'} %><br>
-<% end %>
-<br>
+<div class="card" style="width: 18rem;">
+  <div class="card-body">
+    <h5 class="card-text"><%= comment.user.email %></h5>
+    <h6 class="card-subtitle mb-2 text-muted"><%= time_ago_in_words(comment.created_at) %></h6>
+    <p class="card-text"><%= comment.body %></p>
+    <% if user_signed_in? %>
+	<% if comment.user_id == current_user.id %>
+	<div class="btn btn-danger"><%= link_to 'Delete',[comment.place,comment], method: :delete, data: {confirm: 'Are you sure?'} %></div>
+	<% end %>
+	<% end %>
+	</a>
+  </div>
+</div>

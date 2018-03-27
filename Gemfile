@@ -42,6 +42,8 @@ gem 'devise'
 gem 'bcrypt', platforms: :ruby
 gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
+gem 'twitter-bootstrap-rails'
+gem 'devise-bootstrap-views'
 
 #####################################
 

@@ -39,8 +39,8 @@ hr {
 	<%= render "comments/form" %>
 </div>
 <% if current_user.admin == true && %>
-<%= link_to 'Edit', edit_place_path(@place) %> |
+<div class="btn btn-secondary"><%= link_to 'Edit', edit_place_path(@place) %></div> |
 <% end %>
 <% end %>
-<%= link_to 'Back', places_path %>
+<div class="btn btn-secondary"><%= link_to 'Back', places_path %></div>
 <div class="col-3"></div>

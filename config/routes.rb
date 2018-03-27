@@ -10,4 +10,5 @@ Rails.application.routes.draw do
   #ustvarjeni routi
   get '/index' => 'places#index'
   get '/show' => 'places#show'
+  get '/edit' => 'places#edit'
 end
