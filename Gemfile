@@ -40,6 +40,8 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'bcrypt', platforms: :ruby
+gem 'bootstrap', '~> 4.0.0'
+gem 'jquery-rails'
 
 #####################################
 
