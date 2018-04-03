@@ -31,9 +31,15 @@
     <%= f.text_field :kraj, id: :place_kraj, class: "form-control" %>
   </div>
 
-  <div class="field">
-    <%= f.file_field :image %><br><br> 
+  <div class="input-group mb-3">
+  <div class="input-group-prepend">
+    <span class="input-group-text">Upload</span>
   </div>
+  <div class="custom-file">
+    <%= f.file_field :image, class: "custom-file-input" %> 
+    <label class="custom-file-label" for="inputGroupFile01">Choose file</label>
+  </div>
+</div>
 
   <div class="actions">
     <button type="submit" class="btn btn-primary">Dodaj</button><br><br>

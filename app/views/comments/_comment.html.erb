@@ -1,8 +1,11 @@
-<div class="card" style="width: 18rem;">
+<div class="card" >
   <div class="card-body">
-    <h5 class="card-text"><%= comment.user.email %></h5>
+    <h5 class="card-text"><%= comment.user.email %>
+    <% if comment.user.admin == true %>
+    (ADMIN)
+    <% end %></h5>
     <h6 class="card-subtitle mb-2 text-muted"><%= time_ago_in_words(comment.created_at) %></h6>
-    <p class="card-text"><%= comment.body %></p>
+    <h4 class="card-text"><%= comment.body %></h4>
     <% if user_signed_in? %>
 	<% if comment.user_id == current_user.id %>
 	<div class="btn btn-danger"><%= link_to 'Delete',[comment.place,comment], method: :delete, data: {confirm: 'Are you sure?'} %></div>
