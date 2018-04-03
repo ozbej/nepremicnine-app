@@ -9,6 +9,10 @@
   margin: auto;
 }
 
+.slika {
+  height: 200px;
+  width: 300px;
+}
 </style>
 <div class="body">
 <div class="row">
@@ -22,6 +26,7 @@
 <div class="card" style="width: 100%;">
   <div class="card-body">
     <h5 class="card-title"><%= place.ime %></h5>
+    <%= image_tag place.image_url.to_s, class: "slika" %><br>
     <p class="card-text"><%= place.opis %></p>
     <p class="card-text">Lokacija: <%= place.lokacija %></p>
     <p class="card-text">Kraj: <%= place.kraj %></p>

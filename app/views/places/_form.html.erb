@@ -1,4 +1,4 @@
-<%= form_with(model: place, local: true) do |form| %>
+<%= form_for @place, :html => {:multipart => true} do |f| %>
   <% if place.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(place.errors.count, "error") %> prohibited this place from being saved:</h2>
@@ -12,26 +12,30 @@
   <% end %>
 
   <div class="field">
-    <%= form.label :ime %>
-    <%= form.text_field :ime, id: :place_ime %>
+    <%= f.label :ime %><br>
+    <%= f.text_field :ime, id: :place_ime %><br><br>
   </div>
 
   <div class="field">
-    <%= form.label :opis %>
-    <%= form.text_area :opis, id: :place_opis %>
+    <%= f.label :opis %><br>
+    <%= f.text_area :opis, id: :place_opis %><br><br>
   </div>
 
   <div class="field">
-    <%= form.label :lokacija %>
-    <%= form.text_field :lokacija, id: :place_lokacija %>
+    <%= f.label :lokacija %><br>
+    <%= f.text_field :lokacija, id: :place_lokacija %><br><br>
   </div>
 
   <div class="field">
-    <%= form.label :kraj %>
-    <%= form.text_field :kraj, id: :place_kraj %>
+    <%= f.label :kraj %><br>
+    <%= f.text_field :kraj, id: :place_kraj %><br><br>
+  </div>
+
+  <div class="field">
+    <%= f.file_field :image %><br><br> 
   </div>
 
   <div class="actions">
-    <%= form.submit %>
+    <button type="submit" class="btn btn-primary">Dodaj</button><br><br>
   </div>
 <% end %>

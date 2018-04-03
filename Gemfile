@@ -44,6 +44,7 @@ gem 'bootstrap', '~> 4.0.0'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
+gem "carrierwave"
 
 #####################################
 
