@@ -49,6 +49,7 @@ gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem "carrierwave"
 gem 'omniauth-google-oauth2'
+ruby '2.3.7'
 
 #####################################
 
