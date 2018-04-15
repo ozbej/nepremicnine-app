@@ -12,6 +12,18 @@ hr {
 h3 {
   font-weight: normal;
 }
+
+h4 a {
+  color: black;
+}
+
+h4 a:hover {
+  color: black;
+}
+
+#comments-section {
+  display: none;
+}
 </style>
 
 <div class="row">
@@ -42,7 +54,8 @@ h3 {
 </p>
 <hr>
 <div class="komentarji">
-<h4>Komentarji (<%= @place.comments.count %>)</h4>
+<h4><%= link_to "Komentarji", "#", id:"comments-link" %> (<%= @place.comments.count %>)</h4><br>
+<section id="comments-section">
 <div class="komentar">
 	<%= render @place.comments %>
 </div>
@@ -51,6 +64,7 @@ h3 {
 	<h3>Dodaj komentar:</h3>
 	<%= render "comments/form" %>
 </div>
+</section>
 <% if current_user.admin == true && %>
 <div class="btn btn-secondary"><%= link_to 'Edit', edit_place_path(@place) %></div> |
 <% end %>

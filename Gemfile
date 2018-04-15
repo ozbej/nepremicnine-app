@@ -45,6 +45,7 @@ gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
 gem "carrierwave"
+gem 'omniauth-google-oauth2'
 
 #####################################
 
