@@ -12,10 +12,18 @@
 	  <link rel="stylesheet" href="/resources/demos/style.css">
 
 	  <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
-  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-  <script>
+  	  <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+<script>
   $( function() {
-    $( "#resizable" ).resizable();
+    $( "#resizable" ).resizable({
+      animate: false,
+      maxHeight: 600,
+      maxWidth: 900,
+      minHeight: 200,
+      minWidth: 300,
+      aspectRatio: 300 / 200,
+      ghost: true
+    });
   } );
   </script>
   </head>
