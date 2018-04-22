@@ -38,6 +38,7 @@ class PlacesController < ApplicationController
     #zgoraj je orginal
     #da ustvarimo povezavo, bo sedaj user ustvaril destinacijo in se bo zato shranil njegov tuji ključ
     #v spremenljivki current_user je objekt trenutno prijavljenega uporabnika
+  if current_user.admin == true
     @place = current_user.place.build(place_params)
 
     respond_to do |format|
@@ -50,12 +51,14 @@ class PlacesController < ApplicationController
       end
     end
   end
+  end
 
   # PATCH/PUT /place/1
   # PATCH/PUT /place/1.json
   def update
     #opcijsko, če že imate vnešene kakšne destinacije, preden ste uredili prijavo in povezavo z uporabnikom
     #potem bi ob vsakem urejanju se pod uporabnika vpisal uporabnik, ki trenutno ureja destinacijo
+  if current_user.admin == true
     @place.user = current_user
     
     respond_to do |format|
@@ -68,15 +71,18 @@ class PlacesController < ApplicationController
       end
     end
   end
+  end
 
   # DELETE /place/1
   # DELETE /place/1.json
   def destroy
+  if current_user.admin == true
     @place.destroy
     respond_to do |format|
       format.html { redirect_to places_path, notice: 'Place was successfully destroyed.' }
       format.json { head :no_content }
     end
+  end
   end
 
   private
