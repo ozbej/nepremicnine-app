@@ -52,6 +52,7 @@ class PlacesController < ApplicationController
     end
   if current_user.admin == false
     format.html { redirect_to @place, notice: 'You have to be admin to perform this action.' }
+    format.json { render :show, status: :created, location: @place }
   end
   end
   end
