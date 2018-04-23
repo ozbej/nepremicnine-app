@@ -17,11 +17,9 @@
         <a class="nav-link" href="/index">Domov <span class="sr-only">(current)</span></a>
       </li>
       <% if user_signed_in? %>
-      <% if current_user.admin == true %>
       <div class="btn btn-success">
       	<%= link_to 'Dodaj nepremičnino', new_place_path %>
       </div>
-      <% end %>
       <% end %>
     </ul>
 <!--    <form class="form-inline my-2 my-lg-0">
