@@ -52,7 +52,9 @@ class PlacesController < ApplicationController
     end
     end
   if current_user.admin == false
-    format.html { redirect_to places_path, notice: 'You have to be admin to perform this action.' }
+     respond_to do |format|
+        format.html { redirect_to @place, notice: 'You have to be an admin to perform this action.' }
+      end
   end
   end
 
