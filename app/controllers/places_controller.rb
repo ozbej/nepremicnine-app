@@ -50,8 +50,6 @@ class PlacesController < ApplicationController
         format.json { render json: @place.errors, status: :unprocessable_entity }
       end
     end
-  else 
-    notice: 'Za to dejanje moraš biti admin.'
   end
   end
 
