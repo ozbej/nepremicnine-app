@@ -42,7 +42,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'devise'
 gem 'bcrypt', platforms: :ruby
-gem 'bootstrap', '~> 4.0.0'
+gem 'bootstrap', '~> 4.3.1'
 gem 'jquery-rails'
 gem 'twitter-bootstrap-rails'
 gem 'devise-bootstrap-views'
